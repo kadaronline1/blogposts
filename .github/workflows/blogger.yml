@@ -1,0 +1,28 @@
+name: Daily Blogger Post
+
+on:
+  schedule:
+    - cron: '30 5 * * *' # Tani waa 8:30 AM East Africa Time (UTC 5:30)
+  workflow_dispatch: # Tani waxay kuu oggolaanaysaa inaad gacanta ku kiciso (Test)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install requests groq google-api-python-client google-auth-httplib2 google-auth-oauthlib
+
+      - name: Run script
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          BLOGGER_TOKEN: ${{ secrets.BLOGGER_TOKEN }}
+        run: python auto_blogger.py

@@ -19,7 +19,7 @@ client = Groq(api_key=GROQ_API_KEY)
 # 2. AI CONTENT ENGINE
 # ==========================================
 def get_diverse_ai_topic():
-    styles = ["controversial AI future", "Top 10 hidden AI tools", "AI coding secrets", "AI income niches"]
+    styles = ["controversial AI future", "Gemini AI new updates", "Top 10 AI tools", "New AI videos generation", "AI coding secrets", "Yop AI hidden fir education", "AI income niches"]
     prompt = f"Generate ONE unique, viral blog title about AI technology. Style: {random.choice(styles)}. No quotes."
     completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
@@ -39,7 +39,7 @@ def generate_article_body(title):
 
 # Halkan waxaa lagu daray mashiin sawirka sharaxaya oo title-ka raacaya
 def generate_image_prompt(title):
-    prompt = f"Create a short, descriptive image prompt for an AI generator based on this title: '{title}'. Focus on variety: can be a person using a computer, digital art, futuristic landscape, or abstract tech. Avoid only showing robot heads. Max 15 words."
+    prompt = f"Create two short images, 8k quality, descriptive image prompt for an AI generator based on this title: '{title}'. Focus on variety: can be ai and text or a computer, digital art, ai laptop, futuristic landscape, or abstract tech. Avoid only showing robot heads. Max 15 words."
     completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],

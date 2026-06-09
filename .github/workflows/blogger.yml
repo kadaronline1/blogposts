@@ -2,7 +2,7 @@ name: Daily Blogger Post
 
 on:
   schedule:
-    - cron: '20 10 * * *' # Tani waa 1:20 PM saacadda Soomaaliya
+    # - cron: '20 10 * * *' # Tani waa 1:20 PM saacadda Soomaaliya
   workflow_dispatch: # Tani waxay kuu oggolaanaysaa inaad gacanta ku kiciso (Test)
 
 jobs:
